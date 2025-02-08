@@ -1,41 +1,41 @@
 blueprint:
-  name: DroidPad MQTT
-  descriptcion: Execute an action when receive a DroidPad command
-  domain: automation
-  #source_url:
-  #author: 
-  min_version: 2022.4.0
-  input:
-    mqtt_topic:
-      name: MQTT Topic where received msgs are
-	  selector:
-		text:
-			autocomplete: "DroidPad/Events"
-			type: text
+    name: DroidPad MQTT
+    descriptcion: Execute an action when receive a DroidPad command
+    domain: automation
+    #source_url:
+    #author: 
+    min_version: 2022.4.0
+    input:
+        mqtt_topic:
+        name: MQTT Topic where received msgs are
+        selector:
+            text:
+                autocomplete: "DroidPad/Events"
+                type: text
 	
-	event_type:
-		name: Witch type of trigger is
-		selector:
-			label:
-				multiple: false
-				- switch
-				- slider
-				- joystick
-				- button
-				- dpad
+    event_type:
+        name: Witch type of trigger is
+        selector:
+            label:
+                multiple: false
+                - switch
+                - slider
+                - joystick
+                - button
+                - dpad
 mode: restart
 max_exceeded: silent
 
 triggers:
-  trigger: mqtt
-  topic: !input mqtt_topic
+    trigger: mqtt
+    topic: !input mqtt_topic
 
 variables:
-  event_type: !input event_type
+    event_type: !input event_type
 
 actions:
-  - action: persistent_notification.create
-    data:
+    - action: persistent_notification.create
+      data:
       title: >
         DroidPad Event is {{ event_type }}
       message: "Value is {{ event_type }}"
