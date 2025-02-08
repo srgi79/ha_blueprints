@@ -48,19 +48,15 @@ action:
   - service: persistent_notification.create
     data:
       title: DroidPad
-      {% if event_type == "switch" %}
-	    message: "event_type: {{ event_type }} switch"
-		
-      {% elif if event_type == "slider" %}
-	    message: "event_type: {{ event_type }} slider"
-		
-      {% elif if event_type == "joystick" %}
-	    message: "event_type: {{ event_type }} joystick"
-		
-      {% elif if event_type == "button" %}
-	    message: "event_type: {{ event_type }} button"
-		
-      {% elif if event_type == "dpad" %}
-	    message: "event_type: {{ event_type }} dpad"
-        
-      {% endif %}
+      message: |
+        {% if event_type == "switch" %}
+          Switch
+        {% elif event_type == "slider" %}
+          Slider
+		{% elif event_type == "joystick" %}
+          Joystick
+		{% elif event_type == "button" %}
+          Button
+		{% elif event_type == "dpad" %}
+          DPad
+        {% endif %}
