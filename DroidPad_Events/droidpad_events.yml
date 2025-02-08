@@ -46,17 +46,11 @@ variables:
 
 action:
   - service: persistent_notification.create
-    data:
-      title: DroidPad
-      message: >-
-        {% if event_type == "switch" %}
-          Switch
-        {% elif event_type == "slider" %}
-          Slider
-		{% elif event_type == "joystick" %}
-          Joystick
-		{% elif event_type == "button" %}
-          Button
-		{% elif event_type == "dpad" %}
-          DPad
+    data_template:
+      message: >
+        {% set message = trigger.event.data.service_data.message %}
+        {% if 'invalid authentication' in message or 'login attempt' in message %}
+         Event Type: {{ event_type }}
+        {% else %}
+         Event Type: {{ event_type }}
         {% endif %}
