@@ -48,7 +48,7 @@ action:
   - service: persistent_notification.create
     data_template:
       message: >
-        {% set message = triggers %}
+        {% set message = trigger.payload_json %}
         {% if True %}
          Event Type: {{ event_type }}, {{ message }}
         {% else %}
