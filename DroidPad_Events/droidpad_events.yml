@@ -1,6 +1,6 @@
 blueprint:
   name: DroidPad MQTT
-  descriptcion: Execute an action when receive a DroidPad command
+  description: Execute an action when receive a DroidPad command
   domain: automation
   #source_url:
   #author: 
