@@ -49,7 +49,7 @@ action:
     data_template:
       message: >
         {% set message = trigger.event.data.service_data.message %}
-        {% if 'invalid authentication' in message or 'login attempt' in message %}
+        {% if True %}
          Event Type: {{ event_type }}
         {% else %}
          Event Type: {{ event_type }}
