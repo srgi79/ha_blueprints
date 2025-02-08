@@ -14,7 +14,7 @@ blueprint:
           type: text
 
     event_type:
-      name: Start Trigger - State
+      name: Event Type
       description: >
         Please select what state you would like for your trigger.
       default: button
@@ -45,8 +45,7 @@ variables:
   event_type: !input event_type
 
 action: persistent_notification.create
-  data:
-    message: "Value is {{ event_type }}"
-      
-      
-
+    data:
+      title: >
+        Thermostat is {{ event_type }}
+      message: "Temperature {{ event_type }}"
