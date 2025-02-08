@@ -7,8 +7,9 @@ blueprint:
   min_version: 2022.4.0
   input:
       mqtt_topic:
-      name: MQTT Topic where received msgs are
-      selector:
+        name: MQTT Topic where received msgs are
+        description: MQTT Topic where received msgs are
+        selector:
           text:
               autocomplete: "DroidPad/Events"
               type: text
