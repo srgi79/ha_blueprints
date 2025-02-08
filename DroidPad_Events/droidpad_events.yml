@@ -44,8 +44,8 @@ triggers:
 variables:
   event_type: !input event_type
 
-action: persistent_notification.create
+action:
+  - service: persistent_notification.create
     data:
-      title: >
-        Thermostat is {{ event_type }}
-      message: "Temperature {{ event_type }}"
+      title: Lampe 1
+      message: Batterie Fehlerhaft
