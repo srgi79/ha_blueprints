@@ -48,7 +48,7 @@ action:
   - service: persistent_notification.create
     data:
       title: DroidPad
-      message: |
+      message: >-
         {% if event_type == "switch" %}
           Switch
         {% elif event_type == "slider" %}
