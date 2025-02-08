@@ -15,20 +15,20 @@ blueprint:
               type: text
 
       event_type:
-          name: Witch type of trigger is
-          selector:
-            select:
-              options:
-                - label: switch
-                  value: switch
-                - label: slider
-                  value: slider
-                - label: joystick
-                  value: joystick
-                - label: button
-                  value: button
-                - label: dpad
-                  value: dpad
+        name: Witch type of trigger is
+        selector:
+          select:
+            options:
+              - label: switch
+                value: switch
+              - label: slider
+                value: slider
+              - label: joystick
+                value: joystick
+              - label: button
+                value: button
+              - label: dpad
+                value: dpad
 mode: restart
 max_exceeded: silent
 
