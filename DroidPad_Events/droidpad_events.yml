@@ -17,13 +17,13 @@ blueprint:
   event_type:
       name: Witch type of trigger is
       selector:
-          label:
-              multiple: false
-              - switch
-              - slider
-              - joystick
-              - button
-              - dpad
+          select:
+            options:
+              - "switch"
+              - "slider"
+              - "joystick"
+              - "button"
+              - "dpad"
 mode: restart
 max_exceeded: silent
 
