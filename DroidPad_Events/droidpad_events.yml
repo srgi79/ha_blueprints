@@ -47,9 +47,9 @@ variables:
 actions:
   - action: persistent_notification.create
     data:
-    title: >
-      DroidPad Event is {{ event_type }}
-    message: "Value is {{ event_type }}"
+      title: >
+        DroidPad Event is {{ event_type }}
+      message: "Value is {{ event_type }}"
       
       
 
