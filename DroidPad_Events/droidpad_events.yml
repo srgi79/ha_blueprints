@@ -44,10 +44,9 @@ triggers:
 variables:
   event_type: !input event_type
 
-actions:
-  - action: persistent_notification.create
-    data:
-      message: "Value is {{ event_type }}"
+action: persistent_notification.create
+  data:
+    message: "Value is {{ event_type }}"
       
       
 
