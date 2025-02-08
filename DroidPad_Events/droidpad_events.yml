@@ -48,9 +48,9 @@ action:
   - service: persistent_notification.create
     data_template:
       message: >
-        {% set message = triggers %}
+        {% set message = triggers[0] %}
         {% if True %}
-         Event Type: {{ event_type }}
+         Event Type: {{ event_type }}, {{ message }}
         {% else %}
          Event Type: {{ event_type }}, {{ message }}
         {% endif %}
